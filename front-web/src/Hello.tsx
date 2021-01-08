@@ -11,8 +11,8 @@ function Hello({message}: Prop){
     }
     ,[]);
     return (
-        <h1>Leonardo Asprino Rocha</h1>
-    )
+        <h1>Hello</h1>
+    );
 }
 
 export default Hello;
