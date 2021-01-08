@@ -6,14 +6,12 @@ import Counter from './Counter';
 import NavBar from './Navbar';
 import Home from './Home';
 import Footer from './Footer';
+import Routes from './Routes';
 
 function App() {
   return (
-    <div>
-    <NavBar/>
-    <Home />
-    
-    </div>
+      <Routes />
+
   );
 }
 
