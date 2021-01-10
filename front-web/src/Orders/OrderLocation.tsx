@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import AsyncSelect from 'react-select';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import AsyncSelect from 'react-select/async';
 import { fetchLocalMapBox } from '../api';
 import './styles.css';
-import { OrderLocationdata } from './types';
+import { OrderLocationData } from './types';
 
 const initialPosition = {
-    lat: 51.505,
-    lng: -0.09
+    lat: 20.4325714,
+    lng: -54.6689263
 }
 
 type Place = {
@@ -20,7 +20,7 @@ type Place = {
 }
 
 type Props = {
-    onChangeLocation: (location: OrderLocationdata) => void;
+    onChangeLocation: (location: OrderLocationData) => void;
 }
 
 function OrderLocation({onChangeLocation}: Props) {
@@ -57,7 +57,7 @@ function OrderLocation({onChangeLocation}: Props) {
 
 
     return (
-        <div className="orders-location-container">
+        <div className="order-location-container">
             <div className="order-location-content">
                 <h3 className="order-location-title">
                     Selecione onde o pedido deve ser entregue:
@@ -71,7 +71,7 @@ function OrderLocation({onChangeLocation}: Props) {
                     />
 
                 </div>
-                <MapContainer center={address.position} zoom={13} scrollWheelZoom={false} key={address.position.lat}>
+                <MapContainer center={address.position} zoom={13} scrollWheelZoom key={address.position.lat}>
                     <TileLayer
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
