@@ -1,5 +1,5 @@
 
-import ProductsList from './ProductsList';
+
 import {Product} from './types';
 import './styles.css';
 import { formatPrice } from './helpers';
